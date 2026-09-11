@@ -49,8 +49,8 @@ export const useMapStore = defineStore('map', () => {
     interactive: true,
     minZoom: zoomMin.value,
     maxZoom: zoomMax.value,
-    style:
-      'https://api.maptiler.com/maps/87d1134a-2d44-4c8e-af47-ed81f2e30371/style.json?key=go6pmAvswrTZcAQVPQcy',
+    // Using MapTiler's free dark style - works without domain restrictions
+    style: 'https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json',
   }))
 
   // Actions

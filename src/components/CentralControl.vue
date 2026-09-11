@@ -30,7 +30,7 @@ const accordionValue = ref('overview')
         <div class="accordion-child">
           <div class="description-text">
             <p class="description-paragraph">
-              This simulation models pedestrian movement through Freetown's market area. Two
+              This simulation models pedestrian movement through La Rambla, Barcelona. Two
               urban design scenarios run side by side, allowing direct comparison of how
               changes to buildings, shade, furniture, and stalls influence where people walk,
               where they stop, and how crowding develops.

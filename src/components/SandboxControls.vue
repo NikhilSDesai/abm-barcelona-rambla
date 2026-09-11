@@ -306,8 +306,8 @@ const emit = defineEmits(['switch-terrain'])
 
     <div
       class="bg-dark mt-auto flex w-full cursor-pointer items-center justify-center rounded-lg py-3"
-      title="Back to Freetown"
-      @click="appMode = 'freetown'"
+      title="Back to Barcelona"
+      @click="appMode = 'barcelona'"
     >
       <Home20Regular class="btn h-6 w-6" />
     </div>
