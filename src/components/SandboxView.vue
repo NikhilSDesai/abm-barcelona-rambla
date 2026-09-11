@@ -2,7 +2,7 @@
 import { Play24Regular } from '@vicons/fluent'
 import { onMounted, onUnmounted, ref } from 'vue'
 
-import { AMETHYST, EMBER, NFI_GREEN, SOLAR } from '../assets/palette'
+import { AMETHYST, EMBER, EMERALD, SOLAR } from '../assets/palette'
 import { ThreeView } from '../rendering/ThreeView'
 import { useSandboxStore } from '../stores/sandbox'
 import SandboxControls from './SandboxControls.vue'
@@ -13,8 +13,8 @@ const isReady = ref(false)
 let threeView = null
 
 // Per-origin color palette — distinct hues for up to 4 nodes, drawn from
-// the sanctioned NFI gradient-ramp identity colours.
-const originPalette = [EMBER, NFI_GREEN, SOLAR, AMETHYST]
+// the Aretian gradient-ramp identity colours.
+const originPalette = [EMBER, EMERALD, SOLAR, AMETHYST]
 
 function buildNodeColorMap() {
   const colorMap = new Map()

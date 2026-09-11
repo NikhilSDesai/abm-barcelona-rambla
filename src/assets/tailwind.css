@@ -35,47 +35,41 @@
   --border-4: 6px;
 
   /* ---------------------------------------------------------------
-   * Official NFI colour system (shared across sibling applications).
-   * Any new colour use should draw from these tokens. See AUDIT note
-   * in the README / commit history for non-conforming call-sites
-   * pending migration.
+   * Aretian colour system (Urban Analytics and Design).
+   * Dark blue theme with turquoise accents.
    * --------------------------------------------------------------- */
 
-  /* Neutral palette */
+  /* Neutral palette - Aretian dark blue */
   --color-white: #f6f6f6;
   --color-lighter: #f6f6f6;
-  --color-light: #999997;
-  --color-grey: #484847;
-  --color-dark: #1f1f1f;
-  --color-darker: #141414;
-  --color-darkest: #000;
+  --color-light: #8a8aa3;
+  --color-grey: #4a4a6a;
+  --color-dark: #12122e;
+  --color-darker: #0a0a24;
+  --color-darkest: #06052e;
 
-  /* Accent */
-  --color-accent: #5076ff;
-  --color-nfi-green: #04943c;
+  /* Accent - Aretian turquoise */
+  --color-accent: #4ecdc4;
+  --color-aretian-blue: #06052e;
 
-  /* Delta / comparison signals
-   *   positive = nfi-green, negative = ember burnt orange, neutral = lighter */
-  --color-delta-positive: #04943c;
-  --color-delta-negative: #ff5820;
+  /* Delta / comparison signals */
+  --color-delta-positive: #4ecdc4;
+  --color-delta-negative: #ff6b6b;
   --color-delta-neutral: #f6f6f6;
 
-  /* Gradient-ramp identity colours — sanctioned palette for data
-   * visualisation. Names match the ramp catalogue in the sibling app. */
+  /* Gradient-ramp identity colours */
   --color-deep-blue: #120db3;
   --color-aurora: #e344a3;
   --color-earth: #86370d;
   --color-forest: #7cc715;
-  --color-ember: #ff5820;
-  --color-emerald: #3cb28d;
+  --color-ember: #ff6b6b;
+  --color-emerald: #4ecdc4;
   --color-amethyst: #6c52ff;
   --color-sunset: #ed6353;
   --color-solar: #faff44;
   --color-ice: #d6dfff;
 
-  /* Domain-specific extensions — outside the core brand palette, reserved
-   * for semantic uses where no brand colour fits (e.g. Hall's proxemic
-   * zone traffic-light). Use sparingly and with justification. */
+  /* Domain-specific extensions */
   --color-proxemic-personal: #f7cb15;
   --color-proxemic-intimate: #bf211e;
 }

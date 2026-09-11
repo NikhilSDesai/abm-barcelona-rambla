@@ -95,7 +95,7 @@ const modelBStats = computed(() => {
   }
 })
 
-// Colors matching MapView.vue — drawn from the official NFI palette.
+// Colors matching MapView.vue — drawn from the Aretian palette.
 const shoppingColor = EMBER
 const waitingColor = ACCENT
 const normalColor = LIGHT
