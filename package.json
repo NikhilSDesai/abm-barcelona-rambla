@@ -1,7 +1,7 @@
 {
   "name": "barcelona-rambla-abm",
   "version": "0.1.0",
-  "description": "Pedestrian agent-based model for La Rambla, Barcelona",
+  "description": "Climate intervention ABM for evaluating shade and cooling strategies on La Rambla, Barcelona",
   "author": "Nikhil Desai",
   "private": true,
   "scripts": {

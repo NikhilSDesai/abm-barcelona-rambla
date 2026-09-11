@@ -30,16 +30,15 @@ const accordionValue = ref('overview')
         <div class="accordion-child">
           <div class="description-text">
             <p class="description-paragraph">
-              This simulation models pedestrian movement through La Rambla, Barcelona. Two
-              urban design scenarios run side by side, allowing direct comparison of how
-              changes to buildings, shade, furniture, and stalls influence where people walk,
-              where they stop, and how crowding develops.
+              This simulation models pedestrian movement through La Rambla, Barcelona to evaluate
+              climate adaptation interventions. Two urban design scenarios run side by side,
+              comparing how increased tree shade, green infrastructure, and urban cooling
+              strategies affect pedestrian comfort and behavior during heat events.
             </p>
             <p class="description-paragraph mb-0">
-              The model is necessarily a simplification of real behaviour. Because the same
-              assumptions apply to both sides, the meaningful signal is the difference between
-              scenarios rather than the absolute values. Compare the two panels to gauge how
-              design choices may play out.
+              With summer temperatures exceeding the critical 23.2°C mortality threshold, shade
+              and vegetation become essential. Compare the two panels to assess how climate-responsive
+              design interventions could reduce heat vulnerability and improve walkability.
             </p>
           </div>
         </div>
