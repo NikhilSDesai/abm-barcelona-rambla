@@ -1,6 +1,8 @@
 {
   "name": "barcelona-rambla-abm",
   "version": "0.1.0",
+  "description": "Pedestrian agent-based model for La Rambla, Barcelona",
+  "author": "Nikhil Desai",
   "private": true,
   "scripts": {
     "dev": "vite",

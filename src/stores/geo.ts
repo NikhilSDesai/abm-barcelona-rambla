@@ -411,7 +411,7 @@ export function lonSpanToMeters(lonSpanDeg: number, centerLatDeg: number): numbe
 
 /**
  * Compute the number of patches across the world grid width for a given bbox.
- * Shared by both the Freetown dual-model and sandbox single-model initialisation.
+ * Shared by both the Barcelona dual-model and sandbox single-model initialisation.
  */
 export function computePatchesWidth(
   bbox: number[] | [number, number, number, number],
