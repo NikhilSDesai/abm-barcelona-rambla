@@ -20,7 +20,9 @@ export type { GridLike,NodeState, ScenarioData }
 
 // Module-level helper: fetch and parse GeoJSON
 export async function fetchGeoJSON(filename: string): Promise<FeatureCollection<Geometry>> {
-  const url = new URL(filename, import.meta.url)
+  // Use Vite's base URL for public folder assets
+  const baseUrl = import.meta.env.BASE_URL || '/'
+  const url = `${baseUrl}${filename.startsWith('/') ? filename.slice(1) : filename}`
   const response = await fetch(url)
 
   if (!response.ok) {
