@@ -173,7 +173,7 @@ This simulation is part of the **Exea Impact × Aretian** climate vulnerability 
 
 ## Credits
 
-Adapted from the [Norman Foster Institute Freetown ABM](https://github.com/Norman-Foster-Institute/abm-model-freetown).
+UX inspired by the [Norman Foster Institute Freetown ABM](https://github.com/Norman-Foster-Institute/abm-model-freetown).
 
 **Aretian Urban Analytics:** Climate Adaptation for Barcelona Metropolitan Region
 

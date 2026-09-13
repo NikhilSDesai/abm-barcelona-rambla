@@ -35,42 +35,42 @@
   --border-4: 6px;
 
   /* ---------------------------------------------------------------
-   * Dark forest green colour system.
+   * Deep forest colour system (darkened for heat layer contrast).
    * --------------------------------------------------------------- */
 
-  /* Neutral palette - Dark forest green */
-  --color-white: #e8f0e8;
-  --color-lighter: #d4e4d4;
-  --color-light: #8aab8a;
-  --color-grey: #4a6a4a;
-  --color-dark: #1a2e1a;
-  --color-darker: #0f1f0f;
-  --color-darkest: #0a170a;
+  /* Neutral palette - Deep forest theme */
+  --color-white: #b8c8b8;
+  --color-lighter: #8a9a8a;
+  --color-light: #5a6a5a;
+  --color-grey: #3a4a3a;
+  --color-dark: #0d1a0d;
+  --color-darker: #080f08;
+  --color-darkest: #040804;
 
-  /* Accent - Forest green */
-  --color-accent: #4a9c6d;
-  --color-forest-green: #2d5a3d;
+  /* Accent - Muted forest green */
+  --color-accent: #3d7a5a;
+  --color-forest-green: #1a3a28;
 
   /* Delta / comparison signals */
-  --color-delta-positive: #6bc98a;
-  --color-delta-negative: #c75c5c;
-  --color-delta-neutral: #d4e4d4;
+  --color-delta-positive: #5aaa6a;
+  --color-delta-negative: #a84a4a;
+  --color-delta-neutral: #8a9a8a;
 
-  /* Gradient-ramp identity colours */
-  --color-deep-blue: #1a4a3a;
-  --color-aurora: #8bc9a5;
-  --color-earth: #5d4a2a;
-  --color-forest: #4a9c6d;
-  --color-ember: #c75c5c;
-  --color-emerald: #6bc98a;
-  --color-amethyst: #6a7c9c;
-  --color-sunset: #c98a5c;
-  --color-solar: #c9c96b;
-  --color-ice: #b8d4c8;
+  /* Gradient-ramp identity colours (slightly muted) */
+  --color-deep-blue: #0f2a20;
+  --color-aurora: #6a9a7a;
+  --color-earth: #4a3a1a;
+  --color-forest: #3d7a5a;
+  --color-ember: #a84a4a;
+  --color-emerald: #5aaa6a;
+  --color-amethyst: #5a6a8a;
+  --color-sunset: #a87a4a;
+  --color-solar: #a8a84a;
+  --color-ice: #8aaa9a;
 
   /* Domain-specific extensions */
-  --color-proxemic-personal: #c9a84a;
-  --color-proxemic-intimate: #9c4a4a;
+  --color-proxemic-personal: #a8884a;
+  --color-proxemic-intimate: #8a4a4a;
 }
 
 /* Form controls do not inherit font by default. Force them to pick up

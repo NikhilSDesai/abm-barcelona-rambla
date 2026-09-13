@@ -6,35 +6,35 @@
  * Keep this file in sync with `src/assets/tailwind.css`.
  */
 
-/** Neutral palette - Dark forest green theme */
-export const WHITE = '#e8f0e8'
-export const LIGHTER = '#d4e4d4'
-export const LIGHT = '#8aab8a'
-export const GREY = '#4a6a4a'
-export const DARK = '#1a2e1a'
-export const DARKER = '#0f1f0f'
-export const DARKEST = '#0a170a'
+/** Neutral palette - Deep forest theme (darkened for heat layer contrast) */
+export const WHITE = '#b8c8b8'
+export const LIGHTER = '#8a9a8a'
+export const LIGHT = '#5a6a5a'
+export const GREY = '#3a4a3a'
+export const DARK = '#0d1a0d'
+export const DARKER = '#080f08'
+export const DARKEST = '#040804'
 
-/** Accent - Forest green */
-export const ACCENT = '#4a9c6d'
-export const FOREST_GREEN = '#2d5a3d'
+/** Accent - Muted forest green */
+export const ACCENT = '#3d7a5a'
+export const FOREST_GREEN = '#1a3a28'
 
 /** Delta / comparison signals */
 export const DELTA_POSITIVE = '#6bc98a'
 export const DELTA_NEGATIVE = '#c75c5c'
 export const DELTA_NEUTRAL = LIGHTER
 
-/** Gradient-ramp identity colours */
-export const DEEP_BLUE = '#1a4a3a'
-export const AURORA = '#8bc9a5'
-export const EARTH = '#5d4a2a'
-export const FOREST = '#4a9c6d'
-export const EMBER = '#c75c5c'
-export const EMERALD = '#6bc98a'
-export const AMETHYST = '#6a7c9c'
-export const SUNSET = '#c98a5c'
-export const SOLAR = '#c9c96b'
-export const ICE = '#b8d4c8'
+/** Gradient-ramp identity colours (slightly muted for dark theme) */
+export const DEEP_BLUE = '#0f2a20'
+export const AURORA = '#6a9a7a'
+export const EARTH = '#4a3a1a'
+export const FOREST = '#3d7a5a'
+export const EMBER = '#a84a4a'
+export const EMERALD = '#5aaa6a'
+export const AMETHYST = '#5a6a8a'
+export const SUNSET = '#a87a4a'
+export const SOLAR = '#a8a84a'
+export const ICE = '#8aaa9a'
 
 /**
  * Domain-specific extensions for semantic uses.

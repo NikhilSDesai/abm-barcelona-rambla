@@ -145,18 +145,18 @@ onMounted(async () => {
           type: 'fill',
           source: 'src-temperature',
           paint: {
-            // Forest green gradient: cool emerald -> warm solar -> hot ember
+            // Vivid gradient for dark background: cool cyan -> warm amber -> hot red
             'fill-color': [
               'interpolate',
               ['linear'],
               ['get', 'temp_normalized'],
-              0, '#6bc98a',    // EMERALD - 27.0°C (cool)
-              0.3, '#8bc9a5',  // AURORA - 27.45°C
-              0.5, '#c9c96b',  // SOLAR - 27.75°C (warm yellow)
-              0.7, '#c98a5c',  // SUNSET - 28.05°C (amber)
-              1.0, '#c75c5c',  // EMBER - 28.5°C+ (hot)
+              0, '#40c9a2',    // Cool cyan-green - 27.0°C
+              0.25, '#7dd87d', // Fresh green - 27.4°C
+              0.5, '#e8d44d',  // Warm yellow - 27.75°C
+              0.75, '#e8944d', // Orange - 28.1°C
+              1.0, '#e85050',  // Hot red - 28.5°C+
             ],
-            'fill-opacity': 0.45,
+            'fill-opacity': 0.55,
           },
         })
         map.addLayer({
@@ -168,11 +168,11 @@ onMounted(async () => {
               'interpolate',
               ['linear'],
               ['get', 'temp_normalized'],
-              0, '#6bc98a',    // EMERALD
-              0.5, '#c9c96b',  // SOLAR
-              1.0, '#c75c5c',  // EMBER
+              0, '#40c9a2',    // Cool cyan
+              0.5, '#e8d44d',  // Warm yellow
+              1.0, '#e85050',  // Hot red
             ],
-            'line-opacity': 0.6,
+            'line-opacity': 0.7,
             'line-width': 1,
           },
         })
@@ -195,9 +195,9 @@ onMounted(async () => {
               'interpolate',
               ['linear'],
               ['get', 'temp_normalized'],
-              0, '#4a9c6d',    // ACCENT (forest green)
-              0.5, '#c9a84a',  // PROXEMIC_PERSONAL (amber)
-              1.0, '#9c4a4a',  // PROXEMIC_INTIMATE (muted red)
+              0, '#2a8a6a',    // Dark cyan-green
+              0.5, '#b8a040',  // Dark amber
+              1.0, '#a83030',  // Dark red
             ],
             'text-halo-width': 2,
           },
