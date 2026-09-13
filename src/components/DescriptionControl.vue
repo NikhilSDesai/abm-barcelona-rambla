@@ -7,38 +7,44 @@ import { AccordionContent, AccordionHeader, AccordionItem, AccordionTrigger } fr
   <AccordionItem value="overview" class="accordion-item">
     <AccordionHeader class="border-grey/20 border-b">
       <AccordionTrigger class="accordion-trigger group">
-        <span class="accordion-trigger-text">Overview</span>
+        <span class="accordion-trigger-text">Methodology</span>
         <ChevronCircleDown20Regular class="accordion-trigger-icon" />
       </AccordionTrigger>
     </AccordionHeader>
     <AccordionContent class="accordion-content">
       <div class="accordion-child">
         <div class="description-text">
-          <h3 class="description-heading">Mode</h3>
+          <h3 class="description-heading">Heat Vulnerability Index</h3>
           <p class="description-paragraph">
-            Governs how agents allocate time. Shopping sets the probability that an agent
-            stops at a stall; Resting sets the equivalent probability for street furniture.
-            Both activities are suppressed in crowded conditions so that movement through
-            congestion takes priority.
+            Based on the IPCC AR5 framework, HVI combines three components:
+            <strong>Heat Hazard</strong> (40%) from land surface temperature,
+            <strong>Sensitivity</strong> (35%) from demographic risk factors, and
+            <strong>Adaptive Capacity</strong> (25%) from infrastructure access.
+            Areas with HVI &ge; 0.61 show +140% mortality risk during heat events.
           </p>
 
-          <h3 class="description-heading">Movement</h3>
+          <h3 class="description-heading">Climate Interventions</h3>
           <p class="description-paragraph">
-            Governs how agents navigate. Weather toggles shade-seeking in route choice. Path
-            Randomness varies how closely agents follow utility-optimal routes. Personal
-            Space sets the minimum comfortable separation between agents. Walking Speed sets
-            the free-flow pace before crowd effects take hold.
+            The intervention scenario adds 356 shade features (+30%) and 30 cooling
+            amenities (+60%). Vegetation shows a strong inverse correlation with
+            temperature (r = -0.58), making tree canopy the most effective heat
+            mitigation strategy available.
           </p>
 
-          <h3 class="description-heading">Spawn</h3>
+          <h3 class="description-heading">Shade-Seeking Behavior</h3>
           <p class="description-paragraph">
-            Sets pedestrian arrival rates (persons per hour) at each entry point.
+            When the Weather toggle is set to Sunny, agents exhibit heat shelter-seeking
+            behavior. Route choice includes a shade utility term that biases movement
+            toward shaded areas. This effect is suppressed in crowded conditions where
+            collision avoidance takes priority.
           </p>
 
-          <h3 class="description-heading">Technical</h3>
+          <h3 class="description-heading">Control Panels</h3>
           <p class="description-paragraph mb-0">
-            Outlines the underlying model: discrete-choice route selection, density-dependent
-            speed adaptation, and reciprocal collision avoidance.
+            <strong>Mode</strong> — Shopping and resting probabilities.
+            <strong>Movement</strong> — Weather, path randomness, personal space.
+            <strong>Spawn</strong> — Arrival rates at entry points.
+            <strong>Technical</strong> — Model references and citations.
           </p>
         </div>
       </div>

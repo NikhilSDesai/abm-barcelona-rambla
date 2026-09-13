@@ -242,10 +242,10 @@ const publicLabelB = computed(() => publicLabel(modelBStats.value))
       </AccordionTrigger>
     </AccordionHeader>
     <AccordionContent class="accordion-content">
-      <!-- Weather Switch -->
+      <!-- Heat Event Switch -->
       <div class="accordion-child">
         <div class="accordion-child-pairing">
-          <label for="weather" class="accordion-child-left accordion-heading"> Weather </label>
+          <label for="weather" class="accordion-child-left accordion-heading"> Heat Event </label>
           <div class="accordion-child-right">
             <WeatherCloudy20Regular
               class="h-4 w-4 transition-colors"
@@ -256,15 +256,16 @@ const publicLabelB = computed(() => publicLabel(modelBStats.value))
             </SwitchRoot>
             <WeatherSunny20Regular
               class="h-4 w-4 transition-colors"
-              :class="isSunny ? 'text-accent' : 'text-light'"
+              :class="isSunny ? 'text-ember' : 'text-light'"
             />
           </div>
         </div>
         <div class="description-text">
           <p class="description-intro">
-            In sunny conditions, agents prefer shaded routes, biasing path choice toward
-            tree canopy and covered areas. The weighting is suppressed in crowded areas so
-            that collision avoidance takes priority over thermal comfort.
+            Simulates heat shelter-seeking behavior during extreme temperature events
+            (above 23.2°C mortality threshold). Agents strongly prefer shaded routes,
+            clustering under tree canopy and cooling infrastructure. Effect suppressed
+            in crowded areas where collision avoidance takes priority.
           </p>
         </div>
       </div>

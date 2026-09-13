@@ -62,7 +62,7 @@ const appMode = inject('appMode')
             and walls&mdash;are enforced as hard constraints.
           </p>
 
-          <h3 class="description-heading">References</h3>
+          <h3 class="description-heading">Pedestrian Modeling</h3>
           <ul class="description-list description-references">
             <li>
               Antonini, G., Bierlaire, M. &amp; Weber, M. (2006). Discrete choice models of
@@ -79,10 +79,27 @@ const appMode = inject('appMode')
               vol. 70, pp. 3&ndash;19). Berlin: Springer.
             </li>
             <li>
-              Weidmann, U. (1993). <em>Transporttechnik der Fussg&auml;nger: Transporttechnische
-              Eigenschaften des Fussg&auml;ngerverkehrs, Literaturauswertung</em>
-              (Schriftenreihe des IVT, Nr. 90). Z&uuml;rich: Institut f&uuml;r
-              Verkehrsplanung, Transporttechnik, Strassen- und Eisenbahnbau, ETH Z&uuml;rich.
+              Weidmann, U. (1993). <em>Transporttechnik der Fussg&auml;nger</em>
+              (Schriftenreihe des IVT, Nr. 90). Z&uuml;rich: ETH Z&uuml;rich.
+            </li>
+          </ul>
+
+          <h3 class="description-heading">Climate Vulnerability</h3>
+          <ul class="description-list description-references">
+            <li>
+              IPCC (2014). Climate Change 2014: Impacts, Adaptation, and Vulnerability.
+              <em>Contribution of Working Group II to the Fifth Assessment Report</em>.
+              Cambridge University Press.
+            </li>
+            <li>
+              Inostroza, L., Palme, M. &amp; de la Barrera, F. (2016). A heat vulnerability
+              index: Spatial patterns of exposure, sensitivity and adaptive capacity for
+              Santiago de Chile. <em>PLOS ONE</em>, 11(9), e0162464.
+            </li>
+            <li>
+              Gasparrini, A. et al. (2015). Mortality risk attributable to high and low
+              ambient temperature: a multicountry observational study. <em>The Lancet</em>,
+              386(9991), 369&ndash;375.
             </li>
           </ul>
 

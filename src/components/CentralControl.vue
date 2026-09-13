@@ -3,6 +3,7 @@ import { AccordionRoot } from 'reka-ui'
 import { ref } from 'vue'
 
 import { useSimulationStore } from '../stores/simulation'
+import ClimateMetricsControl from './ClimateMetricsControl.vue'
 import DescriptionControl from './DescriptionControl.vue'
 import MapControl from './MapControl.vue'
 import ModeControl from './ModeControl.vue'
@@ -13,8 +14,8 @@ import TimerWidget from './TimerWidget.vue'
 
 const simStore = useSimulationStore()
 
-// Shared accordion state - default to mode-settings
-const accordionValue = ref('overview')
+// Shared accordion state - default to climate-metrics for visibility
+const accordionValue = ref('climate-metrics')
 </script>
 
 <template>
@@ -30,15 +31,15 @@ const accordionValue = ref('overview')
         <div class="accordion-child">
           <div class="description-text">
             <p class="description-paragraph">
-              This simulation models pedestrian movement through La Rambla, Barcelona to evaluate
-              climate adaptation interventions. Two urban design scenarios run side by side,
-              comparing how increased tree shade, green infrastructure, and urban cooling
-              strategies affect pedestrian comfort and behavior during heat events.
+              <strong>Exea Impact × Aretian</strong> — Climate vulnerability analysis for La Rambla,
+              Barcelona using agent-based simulation. This tool evaluates how urban greening
+              interventions affect pedestrian behavior during extreme heat events.
             </p>
             <p class="description-paragraph mb-0">
-              With summer temperatures exceeding the critical 23.2°C mortality threshold, shade
-              and vegetation become essential. Compare the two panels to assess how climate-responsive
-              design interventions could reduce heat vulnerability and improve walkability.
+              The <strong>Heat Vulnerability Index (HVI)</strong> combines hazard exposure,
+              population sensitivity, and adaptive capacity. When temperatures exceed
+              <strong>23.2°C</strong>, mortality increases by 8.9%. Compare both scenarios
+              to assess intervention effectiveness.
             </p>
           </div>
         </div>
@@ -51,6 +52,7 @@ const accordionValue = ref('overview')
       type="single"
       :collapsible="true"
     >
+      <ClimateMetricsControl />
       <DescriptionControl />
       <ModeControl />
       <MovementControl />
