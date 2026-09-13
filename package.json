@@ -1,6 +1,6 @@
 {
   "name": "barcelona-rambla-abm",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Climate intervention ABM for evaluating shade and cooling strategies on La Rambla, Barcelona",
   "author": "Nikhil Desai",
   "private": true,
