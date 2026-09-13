@@ -156,7 +156,7 @@ onMounted(async () => {
               0.75, '#e8944d', // Orange - 28.1°C
               1.0, '#e85050',  // Hot red - 28.5°C+
             ],
-            'fill-opacity': 0.55,
+            'fill-opacity': 0.35,
           },
         })
         map.addLayer({
@@ -339,7 +339,7 @@ onMounted(async () => {
         source: 'sim-canvas',
         paint: {
           'raster-resampling': 'linear',
-          'raster-opacity': 0.7,
+          'raster-opacity': 0.9,
         },
       })
       map.addLayer({

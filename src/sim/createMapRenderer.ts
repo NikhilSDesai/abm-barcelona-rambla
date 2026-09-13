@@ -249,8 +249,12 @@ export function createMapRenderer(
 
     // Deterministic draw order: regular → shopping → waiting → highlighted.
     // Highlighted agents are guaranteed to render on top of all others.
+    // Enable glow effect for agent visibility against dark/colored backgrounds.
+    ctx.shadowBlur = 8
     for (let c = 0; c < COLOR_COUNT; c++) {
       const css = cssByColorSlot[c]!
+      // Set shadow color to match fill for a cohesive glow
+      ctx.shadowColor = css
       for (let r = 0; r < RADIUS_COUNT; r++) {
         const b = bucketKey(c, r)
         const len = bucketCounts[b]!
@@ -272,6 +276,9 @@ export function createMapRenderer(
         ctx.fill()
       }
     }
+    // Reset shadow for next frame's cell phase
+    ctx.shadowBlur = 0
+    ctx.shadowColor = 'transparent'
   }
 
   function destroy(): void {
