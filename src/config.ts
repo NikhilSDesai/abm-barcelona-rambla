@@ -41,22 +41,23 @@ export const ROUTE_CHOICE = {
   // MNL utility coefficients
   beta: {
     distance: 2.0, // β_dist — normalized progress toward destination
-    alignment: 2.0, // β_align — preference for current heading (× straightness)
-    density: -2.5, // β_density — normalized opposition-weighted density [0,1] (negative = repel)
+    alignment: 1.5, // β_align — preference for current heading (× straightness)
+    density: -2.0, // β_density — normalized opposition-weighted density [0,1] (negative = repel)
     obstacle: -2.0, // β_obstacle — avoidance of stalls/structures (negative = repel)
-    shade: 2.5, // β_shade — preference for shaded patches when sunny & uncrowded (positive = attract)
+    shade: 5.0, // β_shade — STRONG preference for shaded patches (heat shelter seeking behavior)
+    // Increased from 2.5 to demonstrate clear shade-seeking during heat events
     // gated off when localDensity ≥ shadeDensityGate so density avoidance dominates
   },
   // Per-agent heterogeneity
-  straightness: 0.3, // base alignment preference per agent
+  straightness: 0.2, // base alignment preference per agent (reduced to allow more shade-seeking deviation)
   biasStrengthScale: 1.0, // route bias = diversity × this
   // Gumbel error approximation
-  jitterScale: 0.3, // FNV hash noise amplitude (reduced — less needed with normalization)
+  jitterScale: 0.25, // FNV hash noise amplitude
   // Logit scale parameter
-  temperature: 1.0, // 1/μ in Antonini notation; lower = more deterministic
+  temperature: 0.8, // 1/μ in Antonini notation; lower = more deterministic shade-seeking
   // Directional density lookahead
   densityLookahead: 15, // patches ahead to sample for route-choice density (~15m at 1m/patch)
-  shadeLookahead: 8, // patches ahead to sample for shade sensing (~8m at 1m/patch)
+  shadeLookahead: 12, // patches ahead to sample for shade sensing (~12m for better heat shelter detection)
   coDirectionalFloor: 0.2, // minimum opposition weight for co-moving agents (0 = invisible, 1 = same as head-on)
   // gives MNL lateral spreading force for same-direction lane formation
 }
@@ -151,7 +152,8 @@ export const ENGAGEMENT = {
 export const SURFACE = {
   recoveryStrengthNormal: 0.8, // push back onto walkable surface
   recoveryStrengthEngaged: 0.6,
-  shadeDensityGate: 0.8, // ped/m² — above this, shade utility zeroed so crowd avoidance dominates
+  shadeDensityGate: 1.5, // ped/m² — above this, shade utility zeroed so crowd avoidance dominates
+  // Increased from 0.8 to allow shade-seeking in moderately crowded conditions (heat emergency behavior)
 }
 
 // ── Geometry ──────────────────────────────────────────────────
