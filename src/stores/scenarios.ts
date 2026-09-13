@@ -87,12 +87,24 @@ export async function loadScenario(scenarioPath: string): Promise<ScenarioData> 
   }
 }
 
+// Load temperature overlay data
+export async function loadTemperature(scenarioPath: string): Promise<FeatureCollection<Geometry>> {
+  try {
+    return await fetchGeoJSON(`/${scenarioPath}/temperature.geojson`)
+  } catch (e) {
+    console.warn(`Temperature data not found for ${scenarioPath}`)
+    return { type: 'FeatureCollection', features: [] }
+  }
+}
+
 export const useScenariosStore = defineStore('scenarios', () => {
   // State: two ScenarioContainer instances
   const scenarioA = ref<ScenarioContainer | null>(null)
   const scenarioB = ref<ScenarioContainer | null>(null)
   const sharedNodes = ref<NodeState[]>([])
   const nodesBuffered = ref<FeatureCollection<Geometry> | null>(null)
+  const temperatureA = ref<FeatureCollection<Geometry> | null>(null)
+  const temperatureB = ref<FeatureCollection<Geometry> | null>(null)
   const isLoading = ref(false)
   const error = ref<string | null>(null)
 
@@ -108,15 +120,19 @@ export const useScenariosStore = defineStore('scenarios', () => {
       sharedNodes.value = buildNodesFromCollection(sharedNodesGeoJSON)
       nodesBuffered.value = bufferPointsByDia(sharedNodesGeoJSON)
 
-      const [dataA, dataB] = await Promise.all([
+      const [dataA, dataB, tempA, tempB] = await Promise.all([
         loadScenario('rambla_current'),
         loadScenario('rambla_intervention'),
+        loadTemperature('rambla_current'),
+        loadTemperature('rambla_intervention'),
       ])
       // markRaw: keeps Vue from deeply wrapping the FeatureCollection
       // fields in reactive proxies — necessary so the worker can
       // structured-clone them through postMessage().
       scenarioA.value = markRaw(new ScenarioContainer(dataA, 'rambla_current'))
       scenarioB.value = markRaw(new ScenarioContainer(dataB, 'rambla_intervention'))
+      temperatureA.value = markRaw(tempA)
+      temperatureB.value = markRaw(tempB)
     } catch (err) {
       const errorMessage = err instanceof Error ? err.message : 'Unknown error occurred'
       error.value = `Failed to load scenarios: ${errorMessage}`
@@ -131,6 +147,8 @@ export const useScenariosStore = defineStore('scenarios', () => {
     scenarioB,
     sharedNodes,
     nodesBuffered,
+    temperatureA,
+    temperatureB,
     isLoading,
     error,
     hasScenarios,

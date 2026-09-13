@@ -4,24 +4,24 @@ import { ACCENT, EMBER, LIGHT } from '../assets/palette'
 
 <template>
   <div class="map-legend">
+    <!-- Temperature gradient legend -->
+    <div class="legend-item temp-legend">
+      <span class="temp-label">27°C</span>
+      <span class="legend-temp-gradient"></span>
+      <span class="temp-label">28.5°C</span>
+    </div>
+    <div class="legend-divider"></div>
     <div class="legend-item">
       <span class="legend-swatch" :style="{ borderColor: EMBER }"></span>
       <span>Stalls</span>
     </div>
     <div class="legend-item">
       <span class="legend-swatch" :style="{ borderColor: ACCENT }"></span>
-      <span>Waiting</span>
+      <span>Resting</span>
     </div>
     <div class="legend-item">
       <span class="legend-swatch" :style="{ borderColor: LIGHT }"></span>
-      <span>Trees</span>
-    </div>
-    <div class="legend-item">
-      <span
-        class="legend-swatch-radial"
-        :style="{ background: `radial-gradient(circle, ${EMBER} 0%, ${ACCENT} 100%)` }"
-      ></span>
-      <span>Crowds</span>
+      <span>Shade</span>
     </div>
   </div>
 </template>
@@ -35,7 +35,7 @@ import { ACCENT, EMBER, LIGHT } from '../assets/palette'
   @apply overflow-hidden rounded-xl
          bg-dark text-lighter
          pointer-events-none absolute bottom-3 left-3 z-10
-         flex items-center gap-4 px-4 py-1.5 text-xs;
+         flex items-center gap-3 px-3 py-1.5 text-xs;
 }
 
 .legend-item {
@@ -48,5 +48,23 @@ import { ACCENT, EMBER, LIGHT } from '../assets/palette'
 
 .legend-swatch-radial {
   @apply inline-block h-3 w-3 rounded-full;
+}
+
+.legend-temp-gradient {
+  @apply inline-block h-2.5 rounded-sm;
+  width: 50px;
+  background: linear-gradient(to right, #4ecdc4, #7dd87d, #f9d423, #f5a623, #ff6b6b);
+}
+
+.temp-legend {
+  @apply gap-1;
+}
+
+.temp-label {
+  @apply text-[0.65rem] opacity-70;
+}
+
+.legend-divider {
+  @apply h-3 w-px bg-lighter/30;
 }
 </style>

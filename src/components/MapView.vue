@@ -55,6 +55,8 @@ onMounted(async () => {
   const scenarioA = scenariosStore.scenarioA
   const scenarioB = scenariosStore.scenarioB
   const sharedNodes = scenariosStore.sharedNodes
+  const temperatureA = scenariosStore.temperatureA
+  const temperatureB = scenariosStore.temperatureB
   if (!scenarioA || !scenarioB) {
     console.error('Scenarios missing after load')
     return
@@ -124,14 +126,84 @@ onMounted(async () => {
   // Set up map synchronization
   mapStore.setMapReferences(mapA, mapB)
 
-  // Setup maps with their respective scenarios, models, and views
+  // Setup maps with their respective scenarios, models, views, and temperature data
   const mapConfigs = [
-    { map: mapA, scenario: scenarioA, model: modelA, view: viewA },
-    { map: mapB, scenario: scenarioB, model: modelB, view: viewB },
+    { map: mapA, scenario: scenarioA, model: modelA, view: viewA, temperature: temperatureA },
+    { map: mapB, scenario: scenarioB, model: modelB, view: viewB, temperature: temperatureB },
   ]
 
-  for (const { map, scenario, model, view } of mapConfigs) {
+  for (const { map, scenario, model, view, temperature } of mapConfigs) {
     map.on('load', function () {
+      // --- Temperature Overlay (bottom layer) ---
+      if (temperature && temperature.features && temperature.features.length > 0) {
+        map.addSource('src-temperature', {
+          type: 'geojson',
+          data: temperature,
+        })
+        map.addLayer({
+          id: 'temperature-fill',
+          type: 'fill',
+          source: 'src-temperature',
+          paint: {
+            // Fashionable gradient: cool teal -> warm amber -> hot coral
+            'fill-color': [
+              'interpolate',
+              ['linear'],
+              ['get', 'temp_normalized'],
+              0, '#4ecdc4',    // Cool teal (ACCENT) - 27.0°C
+              0.3, '#7dd87d',  // Fresh green - 27.45°C
+              0.5, '#f9d423',  // Warm yellow - 27.75°C
+              0.7, '#f5a623',  // Amber - 28.05°C
+              1.0, '#ff6b6b',  // Hot coral - 28.5°C+
+            ],
+            'fill-opacity': 0.45,
+          },
+        })
+        map.addLayer({
+          id: 'temperature-outline',
+          type: 'line',
+          source: 'src-temperature',
+          paint: {
+            'line-color': [
+              'interpolate',
+              ['linear'],
+              ['get', 'temp_normalized'],
+              0, '#4ecdc4',
+              0.5, '#f9d423',
+              1.0, '#ff6b6b',
+            ],
+            'line-opacity': 0.6,
+            'line-width': 1,
+          },
+        })
+        // Temperature labels for key locations
+        map.addLayer({
+          id: 'temperature-labels',
+          type: 'symbol',
+          source: 'src-temperature',
+          filter: ['!', ['in', 'Interp', ['get', 'name']]],
+          layout: {
+            'text-field': ['concat', ['to-string', ['get', 'temp_summer']], '°'],
+            'text-size': 11,
+            'text-font': ['Open Sans Bold', 'Arial Unicode MS Bold'],
+            'text-anchor': 'center',
+            'text-allow-overlap': false,
+          },
+          paint: {
+            'text-color': '#ffffff',
+            'text-halo-color': [
+              'interpolate',
+              ['linear'],
+              ['get', 'temp_normalized'],
+              0, '#2a9d8f',
+              0.5, '#e9c46a',
+              1.0, '#e63946',
+            ],
+            'text-halo-width': 2,
+          },
+        })
+      }
+
       // --- Sources ---
       map.addSource('sim-canvas', {
         type: 'canvas',
