@@ -10,8 +10,6 @@ import {
 } from '@vicons/fluent'
 import { SwitchRoot, SwitchThumb } from 'reka-ui'
 
-import aretianLogoSrc from '../assets/aretian-logo.png'
-
 const props = defineProps({
   store: {
     type: Object,
@@ -24,9 +22,6 @@ const props = defineProps({
   <div
     class="bg-dark text-lighter flex w-full flex-col items-center justify-around gap-6 rounded-lg px-3 py-8 text-xs"
   >
-    <!-- Aretian Logo -->
-    <img :src="aretianLogoSrc" alt="Aretian" class="w-32" />
-
     <!-- Controls row -->
     <div class="bg-darker flex items-stretch justify-evenly gap-8 rounded-lg px-6 py-3">
       <!-- Play controls -->

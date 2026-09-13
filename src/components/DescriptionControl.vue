@@ -41,10 +41,10 @@ import { AccordionContent, AccordionHeader, AccordionItem, AccordionTrigger } fr
 
           <h3 class="description-heading">Control Panels</h3>
           <p class="description-paragraph mb-0">
-            <strong>Mode</strong> — Shopping and resting probabilities.
-            <strong>Movement</strong> — Weather, path randomness, personal space.
-            <strong>Spawn</strong> — Arrival rates at entry points.
-            <strong>Technical</strong> — Model references and citations.
+            <strong>Mode:</strong> Shopping and resting probabilities.
+            <strong>Movement:</strong> Weather, path randomness, personal space.
+            <strong>Spawn:</strong> Arrival rates at entry points.
+            <strong>Technical:</strong> Model references and citations.
           </p>
         </div>
       </div>

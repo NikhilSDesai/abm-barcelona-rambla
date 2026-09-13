@@ -53,7 +53,7 @@ import { ACCENT, EMBER, LIGHT } from '../assets/palette'
 .legend-temp-gradient {
   @apply inline-block h-2.5 rounded-sm;
   width: 50px;
-  background: linear-gradient(to right, #4ecdc4, #7dd87d, #f9d423, #f5a623, #ff6b6b);
+  background: linear-gradient(to right, #6bc98a, #8bc9a5, #c9c96b, #c98a5c, #c75c5c);
 }
 
 .temp-legend {

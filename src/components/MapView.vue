@@ -145,16 +145,16 @@ onMounted(async () => {
           type: 'fill',
           source: 'src-temperature',
           paint: {
-            // Fashionable gradient: cool teal -> warm amber -> hot coral
+            // Forest green gradient: cool emerald -> warm solar -> hot ember
             'fill-color': [
               'interpolate',
               ['linear'],
               ['get', 'temp_normalized'],
-              0, '#4ecdc4',    // Cool teal (ACCENT) - 27.0°C
-              0.3, '#7dd87d',  // Fresh green - 27.45°C
-              0.5, '#f9d423',  // Warm yellow - 27.75°C
-              0.7, '#f5a623',  // Amber - 28.05°C
-              1.0, '#ff6b6b',  // Hot coral - 28.5°C+
+              0, '#6bc98a',    // EMERALD - 27.0°C (cool)
+              0.3, '#8bc9a5',  // AURORA - 27.45°C
+              0.5, '#c9c96b',  // SOLAR - 27.75°C (warm yellow)
+              0.7, '#c98a5c',  // SUNSET - 28.05°C (amber)
+              1.0, '#c75c5c',  // EMBER - 28.5°C+ (hot)
             ],
             'fill-opacity': 0.45,
           },
@@ -168,9 +168,9 @@ onMounted(async () => {
               'interpolate',
               ['linear'],
               ['get', 'temp_normalized'],
-              0, '#4ecdc4',
-              0.5, '#f9d423',
-              1.0, '#ff6b6b',
+              0, '#6bc98a',    // EMERALD
+              0.5, '#c9c96b',  // SOLAR
+              1.0, '#c75c5c',  // EMBER
             ],
             'line-opacity': 0.6,
             'line-width': 1,
@@ -195,9 +195,9 @@ onMounted(async () => {
               'interpolate',
               ['linear'],
               ['get', 'temp_normalized'],
-              0, '#2a9d8f',
-              0.5, '#e9c46a',
-              1.0, '#e63946',
+              0, '#4a9c6d',    // ACCENT (forest green)
+              0.5, '#c9a84a',  // PROXEMIC_PERSONAL (amber)
+              1.0, '#9c4a4a',  // PROXEMIC_INTIMATE (muted red)
             ],
             'text-halo-width': 2,
           },

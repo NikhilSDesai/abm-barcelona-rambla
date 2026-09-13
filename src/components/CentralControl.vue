@@ -31,7 +31,7 @@ const accordionValue = ref('climate-metrics')
         <div class="accordion-child">
           <div class="description-text">
             <p class="description-paragraph">
-              <strong>Exea Impact × Aretian</strong> — Climate vulnerability analysis for La Rambla,
+              <strong>Exea Impact × Aretian:</strong> Climate vulnerability analysis for La Rambla,
               Barcelona using agent-based simulation. This tool evaluates how urban greening
               interventions affect pedestrian behavior during extreme heat events.
             </p>

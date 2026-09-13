@@ -35,46 +35,45 @@
   --border-4: 6px;
 
   /* ---------------------------------------------------------------
-   * Aretian colour system (Urban Analytics and Design).
-   * Dark blue theme with turquoise accents.
+   * Dark forest green colour system.
    * --------------------------------------------------------------- */
 
-  /* Neutral palette - Aretian dark blue */
-  --color-white: #f6f6f6;
-  --color-lighter: #f6f6f6;
-  --color-light: #8a8aa3;
-  --color-grey: #4a4a6a;
-  --color-dark: #12122e;
-  --color-darker: #0a0a24;
-  --color-darkest: #06052e;
+  /* Neutral palette - Dark forest green */
+  --color-white: #e8f0e8;
+  --color-lighter: #d4e4d4;
+  --color-light: #8aab8a;
+  --color-grey: #4a6a4a;
+  --color-dark: #1a2e1a;
+  --color-darker: #0f1f0f;
+  --color-darkest: #0a170a;
 
-  /* Accent - Aretian turquoise */
-  --color-accent: #4ecdc4;
-  --color-aretian-blue: #06052e;
+  /* Accent - Forest green */
+  --color-accent: #4a9c6d;
+  --color-forest-green: #2d5a3d;
 
   /* Delta / comparison signals */
-  --color-delta-positive: #4ecdc4;
-  --color-delta-negative: #ff6b6b;
-  --color-delta-neutral: #f6f6f6;
+  --color-delta-positive: #6bc98a;
+  --color-delta-negative: #c75c5c;
+  --color-delta-neutral: #d4e4d4;
 
   /* Gradient-ramp identity colours */
-  --color-deep-blue: #120db3;
-  --color-aurora: #e344a3;
-  --color-earth: #86370d;
-  --color-forest: #7cc715;
-  --color-ember: #ff6b6b;
-  --color-emerald: #4ecdc4;
-  --color-amethyst: #6c52ff;
-  --color-sunset: #ed6353;
-  --color-solar: #faff44;
-  --color-ice: #d6dfff;
+  --color-deep-blue: #1a4a3a;
+  --color-aurora: #8bc9a5;
+  --color-earth: #5d4a2a;
+  --color-forest: #4a9c6d;
+  --color-ember: #c75c5c;
+  --color-emerald: #6bc98a;
+  --color-amethyst: #6a7c9c;
+  --color-sunset: #c98a5c;
+  --color-solar: #c9c96b;
+  --color-ice: #b8d4c8;
 
   /* Domain-specific extensions */
-  --color-proxemic-personal: #f7cb15;
-  --color-proxemic-intimate: #bf211e;
+  --color-proxemic-personal: #c9a84a;
+  --color-proxemic-intimate: #9c4a4a;
 }
 
-/* Form controls do not inherit font by default — force them to pick up
+/* Form controls do not inherit font by default. Force them to pick up
  * the Inter stack and weight set on the document root. */
 @layer base {
   button,
