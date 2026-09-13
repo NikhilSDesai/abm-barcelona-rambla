@@ -346,11 +346,17 @@ onUnmounted(() => {
     <div class="grid-sidebar">
       <CentralControls />
     </div>
-    <div id="mapA" class="map-container grid-map-a relative">
-      <MapLegend />
+    <div class="map-panel grid-map-a">
+      <div class="map-label">Current</div>
+      <div id="mapA" class="map-container relative">
+        <MapLegend />
+      </div>
     </div>
-    <div id="mapB" class="map-container grid-map-b relative">
-      <MapLegend />
+    <div class="map-panel grid-map-b">
+      <div class="map-label">Climate Intervention</div>
+      <div id="mapB" class="map-container relative">
+        <MapLegend />
+      </div>
     </div>
   </div>
 </template>
@@ -365,8 +371,18 @@ onUnmounted(() => {
   grid-template-rows: 1fr;
 }
 
+.map-panel {
+  @apply flex flex-col;
+  min-height: 0;
+}
+
+.map-label {
+  @apply text-lighter text-center text-sm font-medium py-2 bg-darker rounded-t-lg;
+  letter-spacing: 0.05em;
+}
+
 .map-container {
-  @apply overflow-hidden rounded-lg;
+  @apply overflow-hidden rounded-b-lg flex-1;
 }
 
 .grid-map-a {
