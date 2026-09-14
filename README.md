@@ -1,7 +1,5 @@
 # La Rambla Climate Intervention ABM
 
-**Exea Impact × Aretian Urban Analytics**
-
 A pedestrian agent-based model (ABM) for evaluating climate adaptation interventions on La Rambla, Barcelona. This simulation compares urban design scenarios to assess how shade, vegetation, and cooling strategies affect pedestrian behavior during heat events.
 
 ## Live Demo
@@ -141,8 +139,6 @@ nodes.interval = 9                  // Spawn interval in seconds
 
 ## Related Work
 
-This simulation is part of the **Exea Impact × Aretian** climate vulnerability analysis:
-
 - **Heat Vulnerability Index (HVI)**: Census section analysis using IPCC AR5 framework
 - **Flood Vulnerability Index (FVI)**: H3 hexagon analysis with 4-component IPCC AR6 framework
 - **Mortality Analysis**: 15-year temperature-mortality correlation study
@@ -173,9 +169,7 @@ This simulation is part of the **Exea Impact × Aretian** climate vulnerability 
 
 ## Credits
 
-UX inspired by the [Norman Foster Institute Freetown ABM](https://github.com/Norman-Foster-Institute/abm-model-freetown).
-
-**Aretian Urban Analytics:** Climate Adaptation for Barcelona Metropolitan Region
+UX inspired by [Gareth Simons](https://github.com/Norman-Foster-Institute/abm-model-freetown).
 
 ## License
 
